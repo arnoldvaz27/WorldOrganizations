@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements CountryListeners 
 
     // declaration of the various views and components
     ImageView imageView;
-    String countryName, countryBorders, population, subregion, region, capital, flag, languages;
+    String countryName, countryBorders, population, subregion, region, capital, flag, languages,topLevelDomain,area,latlng,numericCode,nativeName;
     private RecyclerView countryRecyclerView;
     private List<Country> countriesList;
     private CountryAdapter countryAdapter;
@@ -218,6 +218,11 @@ public class MainActivity extends AppCompatActivity implements CountryListeners 
                         subregion = cityInfo.getString("subregion");
                         region = cityInfo.getString("region");
                         capital = cityInfo.getString("capital");
+                        topLevelDomain = cityInfo.getString("topLevelDomain");
+                        area = cityInfo.getString("area");
+                        latlng = cityInfo.getString("latlng");
+                        numericCode = cityInfo.getString("numericCode");
+                        nativeName = cityInfo.getString("nativeName");
                         JSONArray movies = cityInfo.getJSONArray("languages");
                         for (int j = 0; j < movies.length(); j++) {
                             JSONObject details = movies.getJSONObject(j);
@@ -237,6 +242,11 @@ public class MainActivity extends AppCompatActivity implements CountryListeners 
                         country.setPopulation(population);
                         country.setCapital(capital);
                         country.setFlagPath(flag);
+                        country.setTopLevelDomain(topLevelDomain);
+                        country.setArea(area);
+                        country.setNativeName(nativeName);
+                        country.setLatlng(latlng);
+                        country.setNumericCode(numericCode);
 
                         //Async task used as the saving of the data to room database will be executed on the background thread
                         @SuppressLint("StaticFieldLeak")

@@ -65,7 +65,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.CountryV
         LinearLayout layoutNote;
         ImageView imageView;
         TextView textView;
-        String population,languages;
+        String population,languages,border;
 
         public CountryViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -83,10 +83,19 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.CountryV
 
             population = addCommasToNumericString(country.getPopulation());
             languages = country.getLanguages();
+            border = country.getBorders().substring(1,country.getBorders().length()-1);
 
 
-            textView.setText("Country Name: "+country.getName() + "\n\nCapital: "+country.getCapital() + "\n\nPopulation: "+population
-            +"\n\nRegion: "+country.getRegion()+"\n\nSub Region: "+country.getSubRegion()+"\n\nLanguages spoken (Name : Native Name) : \n"+country.getLanguages()+"\n\nBorders shared with: \n"+country.getBorders());
+            if(border.equals("")){
+                textView.setText("Country Name: "+country.getName() + "\n\nCapital: "+country.getCapital() + "\n\nPopulation: "+population
+                        +"\n\nRegion: "+country.getRegion()+"\n\nSub Region: "+country.getSubRegion()+"\n\nLanguages spoken (Name : Native Name) : \n"+country.getLanguages()+"\n\nBorders shared with: No Borders Shared"+"\n\nArea(sq km): "+country.getArea()
+                        +"\n\nTop Level Domain: "+country.getTopLevelDomain().substring(1,country.getTopLevelDomain().length()-1)+"\n\nNumeric Code: "+country.getNumericCode()+"\n\nLatitude,Longitude: "+country.getLatlng().substring(1,country.getLatlng().length()-1)+"\n\nNative Name: "+country.getNativeName());
+            }
+            else{
+                textView.setText("Country Name: "+country.getName() + "\n\nCapital: "+country.getCapital() + "\n\nPopulation: "+population
+                        +"\n\nRegion: "+country.getRegion()+"\n\nSub Region: "+country.getSubRegion()+"\n\nLanguages spoken (Name : Native Name) : \n"+country.getLanguages()+"\n\nBorders shared with: "+country.getBorders().substring(1,country.getBorders().length()-1)+"\n\nArea(sq km): "+country.getArea()
+                        +"\n\nTop Level Domain: "+country.getTopLevelDomain().substring(1,country.getTopLevelDomain().length()-1)+"\n\nNumeric Code: "+country.getNumericCode()+"\n\nLatitude,Longitude: "+country.getLatlng().substring(1,country.getLatlng().length()-1)+"\n\nNative Name: "+country.getNativeName());
+            }
         }
     }
 

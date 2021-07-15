@@ -10,7 +10,7 @@ import com.arnold.worldorganizations.dao.CountryDao;
 import com.arnold.worldorganizations.entites.Country;
 
 //defining the country database is done below
-@Database(entities = Country.class, version = 1,exportSchema = false)
+@Database(entities = Country.class, version = 2)
 public abstract class CountryDatabase extends RoomDatabase {
     private static CountryDatabase countryDatabase;
 

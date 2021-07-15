@@ -19,9 +19,6 @@ public interface CountryDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertCountry(Country country);
 
-    @Query("SELECT COUNT(*) FROM countries")
-    int getDataCount();
-
     @Query("DELETE FROM countries")
     void deleteAll();
 }

@@ -38,6 +38,22 @@ public class Country implements Serializable {
     @ColumnInfo(name = "languages")
     private String Languages;
 
+    @ColumnInfo(name = "topLevelDomain")
+    private String topLevelDomain;
+
+    @ColumnInfo(name = "area")
+    private String area;
+
+    @ColumnInfo(name = "latlng")
+    private String latlng;
+
+
+    @ColumnInfo(name = "numericCode")
+    private String numericCode;
+
+    @ColumnInfo(name = "nativeName")
+    private String nativeName;
+
     //getters and setters of all the declared columns
     public String getRegion() {
         return Region;
@@ -109,5 +125,45 @@ public class Country implements Serializable {
 
     public void setFlagPath(String flagPath) {
         this.FlagPath = flagPath;
+    }
+
+    public String getTopLevelDomain() {
+        return topLevelDomain;
+    }
+
+    public void setTopLevelDomain(String topLevelDomain) {
+        this.topLevelDomain = topLevelDomain;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getLatlng() {
+        return latlng;
+    }
+
+    public void setLatlng(String latlng) {
+        this.latlng = latlng;
+    }
+
+    public String getNumericCode() {
+        return numericCode;
+    }
+
+    public void setNumericCode(String numericCode) {
+        this.numericCode = numericCode;
+    }
+
+    public String getNativeName() {
+        return nativeName;
+    }
+
+    public void setNativeName(String nativeName) {
+        this.nativeName = nativeName;
     }
 }
