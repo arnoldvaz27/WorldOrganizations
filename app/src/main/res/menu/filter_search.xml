@@ -3,42 +3,42 @@
 
     <item
         android:id="@+id/EU"
-        android:title="European Union" />
+        android:title="@string/european_union" />
     <item
         android:id="@+id/EFTA"
-        android:title="European Tree Trade Association" />
+        android:title="@string/european_tree_trade_association" />
     <item
         android:id="@+id/CARICOM"
-        android:title="Caribbean Community" />
+        android:title="@string/caribbean_community" />
     <item
         android:id="@+id/PA"
-        android:title="Pacific Alliance" />
+        android:title="@string/pacific_alliance" />
     <item
         android:id="@+id/AU"
-        android:title="African Union" />
+        android:title="@string/african_union" />
     <item
         android:id="@+id/USAN"
-        android:title="Union of South American Nations" />
+        android:title="@string/union_of_south_american_nations" />
     <item
         android:id="@+id/EEU"
-        android:title="Eurasian Economic Union" />
+        android:title="@string/eurasian_economic_union" />
     <item
         android:id="@+id/AL"
-        android:title="Arab League" />
+        android:title="@string/arab_league" />
     <item
         android:id="@+id/ASEAN"
-        android:title="Association of Southeast Asian Nations" />
+        android:title="@string/association_of_southeast_asian_nations" />
     <item
         android:id="@+id/CAIS"
-        android:title="Central American Integration System" />
+        android:title="@string/central_american_integration_system" />
     <item
         android:id="@+id/CEFTA"
-        android:title="Central European Free Trade Agreement" />
+        android:title="@string/central_european_free_trade_agreement" />
     <item
         android:id="@+id/NAFTA"
-        android:title="North American Free Trade Agreement" />
+        android:title="@string/north_american_free_trade_agreement" />
     <item
         android:id="@+id/SAARC"
-        android:title="South Asian Association for Regional Cooperation" />
+        android:title="@string/south_asian_association_for_regional_cooperation" />
 
 </menu>
