@@ -274,7 +274,7 @@ public class MainActivity extends AppCompatActivity implements CountryListeners 
                     e.printStackTrace();
                 }
             }
-        }, error ->  Toast.makeText(MainActivity.this, "Error, Please make sure the internet is on", Toast.LENGTH_SHORT).show());loadingBar.dismiss();; //loading bar dismissed as the data has been loaded and is saved in the database); //in case of any error this toast will be executed
+        }, error ->  Toast.makeText(MainActivity.this, "Error, Please make sure the internet is on", Toast.LENGTH_SHORT).show());loadingBar.dismiss(); //loading bar dismissed as the data has been loaded and is saved in the database); //in case of any error this toast will be executed
 
         MySingleton.getInstance(MainActivity.this).addToRequestQueue(request);
 
