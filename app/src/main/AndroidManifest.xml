@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/WorldOrganizations"
         tools:ignore="AllowBackup">
+        <activity android:name=".Activity.MoreMenu"/>
         <activity android:name="com.arnold.worldorganizations.Activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

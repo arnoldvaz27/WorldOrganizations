@@ -1,14 +1,8 @@
 package com.arnold.worldorganizations.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +11,10 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -35,10 +33,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings({"deprecation"})
 public class MainActivity extends AppCompatActivity implements CountryListeners {
 
     // declaration of the various views and components
-    ImageView imageView;
+    ImageView imageView, imageView1;
     String countryName, countryBorders, population, subregion, region, capital, flag, languages,topLevelDomain,area,latlng,numericCode,nativeName;
     private RecyclerView countryRecyclerView;
     private List<Country> countriesList;
@@ -58,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements CountryListeners 
         //initializing
         loadingBar = new ProgressDialog(this);
         imageView = findViewById(R.id.delete);
+        imageView1 = findViewById(R.id.more);
         countryRecyclerView = findViewById(R.id.RecyclerView);
         associationName = findViewById(R.id.associationName);
 
@@ -79,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements CountryListeners 
 
         //imageview with click listener, which will delete the data after the user clicks on this view
         imageView.setOnClickListener(v -> DeletingData());
+
+        imageView1.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), MoreMenu.class)));
 
         //imageview with click listener, which will reload the whole activity without any animation.
         findViewById(R.id.refresh).setOnClickListener(v -> {
@@ -280,20 +282,6 @@ public class MainActivity extends AppCompatActivity implements CountryListeners 
 
     }
 
-    //method to check the network state of device
-    private boolean isConnected() {
-        boolean connected;
-        try {
-            ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(CONNECTIVITY_SERVICE);
-            NetworkInfo nInfo = cm.getActiveNetworkInfo();
-            connected = nInfo != null && nInfo.isAvailable() && nInfo.isConnected();
-            return connected;
-        } catch (Exception e) {
-            Toast.makeText(MainActivity.this, (CharSequence) e, Toast.LENGTH_SHORT).show();
-        }
-        return false;
-    }
-
     //method to display all the data that has been saved in the room database
     private void Display() {
         countriesList = new ArrayList<>();
@@ -314,6 +302,7 @@ public class MainActivity extends AppCompatActivity implements CountryListeners 
                         .countryDao().getAllCountries();
             }
 
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             protected void onPostExecute(List<Country> countries) {
                 super.onPostExecute(countries);
@@ -334,6 +323,7 @@ public class MainActivity extends AppCompatActivity implements CountryListeners 
 
     //method for deleting all the data from the room database
     public void DeletingData(){
+        @SuppressLint("StaticFieldLeak")
         class Delete extends AsyncTask<Void, Void, List<Country>> {
             @Override
             protected List<Country> doInBackground(Void... voids) {
@@ -355,6 +345,7 @@ public class MainActivity extends AppCompatActivity implements CountryListeners 
     }
 
     public void DataRefreshed(){
+        @SuppressLint("StaticFieldLeak")
         class Delete extends AsyncTask<Void, Void, List<Country>> {
             @Override
             protected List<Country> doInBackground(Void... voids) {

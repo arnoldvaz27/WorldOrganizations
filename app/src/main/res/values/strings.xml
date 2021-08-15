@@ -19,4 +19,12 @@
     <string name="central_european_free_trade_agreement">Central European Free Trade Agreement</string>
     <string name="north_american_free_trade_agreement">North American Free Trade Agreement</string>
     <string name="south_asian_association_for_regional_cooperation">South Asian Association for Regional Cooperation</string>
+    <string name="moreMenu">More Menu</string>
+    <string name="more_options">More Options</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_and_condition">Terms And Condition</string>
+    <string name="for_developer">For Developer</string>
+    <string name="website">Website</string>
+    <string name="youtube">YouTube</string>
+    <string name="todo">TODO</string>
 </resources>
