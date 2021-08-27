@@ -34,3 +34,6 @@ Below details are shown in the application:
 4) [OkHttp](https://square.github.io/okhttp/) - For networking
 
 
+## License under MIT ![License](https://img.shields.io/badge/License-MIT-red)    ![Copyright](https://img.shields.io/badge/Copyright%202021-Arnold%20Alwyn%20Vaz-red)
+
+Check [here](https://arnoldvaz27.github.io/LICENSE) for more details 
